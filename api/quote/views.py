@@ -30,8 +30,6 @@ def generate_price(quote):
 
 def index(request, resource_id):
     quote = get_object_or_404(Quote, pk=resource_id)
-    print(quote.state)
-    print('Some other ti')
     # TODO: Should add non-nullable primary_coverage to Quote
     primary_coverage = (
         quote.coverages.filter(name='Basic').first()
