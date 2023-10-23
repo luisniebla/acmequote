@@ -22,21 +22,57 @@
   {
     "model": "quote.coveragesurcharge",
     "pk": "424fca6c-e166-4546-ad1d-09f46f14d195",
-    "fields": { "coverage": "Flood", "state": "TX", "fee": "0.0050" }
+    "fields": { "coverage": "Flood", "state": "TX", "fee": "0.5000" }
   },
   {
     "model": "quote.coveragesurcharge",
     "pk": "5cd48c54-58e7-4f89-a08e-939aad43dec7",
-    "fields": { "coverage": "Flood", "state": "CA", "fee": "0.0100" }
+    "fields": { "coverage": "Flood", "state": "CA", "fee": "0.0200" }
   },
   {
     "model": "quote.coveragesurcharge",
     "pk": "7ac7d86e-515b-4fce-bf9a-4415cae21943",
-    "fields": { "coverage": "Flood", "state": "NY", "fee": "0.0200" }
+    "fields": { "coverage": "Flood", "state": "NY", "fee": "0.1000" }
   },
   { "model": "quote.state", "pk": "CA", "fields": { "tax": "0.0100" } },
   { "model": "quote.state", "pk": "NY", "fields": { "tax": "0.0200" } },
   { "model": "quote.state", "pk": "TX", "fields": { "tax": "0.0050" } },
+  {
+    "model": "quote.quote",
+    "pk": "09590402-2656-41d4-9f91-a5c57907b6aa",
+    "fields": {
+      "name": "Quote 3",
+      "state": "NY",
+      "coverages": ["Pet", "Premium"]
+    }
+  },
+  {
+    "model": "quote.quote",
+    "pk": "0a9be26b-0111-465e-8f89-93ac747905b3",
+    "fields": {
+      "name": "Quote 2",
+      "state": "CA",
+      "coverages": ["Flood", "Pet", "Premium"]
+    }
+  },
+  {
+    "model": "quote.quote",
+    "pk": "3ee485cc-7c9c-485b-a0f1-baf71cd71d28",
+    "fields": {
+      "name": "Quote 1",
+      "state": "CA",
+      "coverages": ["Basic", "Flood", "Pet"]
+    }
+  },
+  {
+    "model": "quote.quote",
+    "pk": "7e531358-acb1-4027-8aee-f10ff24fae97",
+    "fields": {
+      "name": "Quote 4",
+      "state": "TX",
+      "coverages": ["Basic", "Flood"]
+    }
+  },
   {
     "model": "admin.logentry",
     "pk": 1,
@@ -165,6 +201,97 @@
       "object_repr": "Flood - NY",
       "action_flag": 1,
       "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2023-10-23T05:44:02.464Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "3ee485cc-7c9c-485b-a0f1-baf71cd71d28",
+      "object_repr": "Quote 1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2023-10-23T05:44:11.040Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "0a9be26b-0111-465e-8f89-93ac747905b3",
+      "object_repr": "Quote 2",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2023-10-23T05:44:19.940Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "09590402-2656-41d4-9f91-a5c57907b6aa",
+      "object_repr": "Quote 3",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2023-10-23T05:45:45.796Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "7e531358-acb1-4027-8aee-f10ff24fae97",
+      "object_repr": "Quote 4",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2023-10-23T06:17:47.879Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "5cd48c54-58e7-4f89-a08e-939aad43dec7",
+      "object_repr": "Flood - CA",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Fee\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2023-10-23T06:18:01.102Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "7ac7d86e-515b-4fce-bf9a-4415cae21943",
+      "object_repr": "Flood - NY",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Fee\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2023-10-23T06:18:08.585Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "424fca6c-e166-4546-ad1d-09f46f14d195",
+      "object_repr": "Flood - TX",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Fee\"]}}]"
     }
   },
   {
