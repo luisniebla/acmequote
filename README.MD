@@ -1,9 +1,11 @@
 # Setup
 1. Install Docker Desktop
 2. `docker compose up`
-3. `docker compose exec api createdb -U postgres acme`
-4. `docker compose exec api python manage.py makemigrations`
 3. `docker compose exec api python manage.py migrate`
+4. `docker compose exec api python manage.py loaddata testcases.json`
+5. http://localhost:8000/admin/
+6. `admin / password`
+
 
 
 # TODO

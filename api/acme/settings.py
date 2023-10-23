@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'acme',
         "ENGINE": "django.db.backends.postgresql",
         'USER': 'postgres',
-        'HOST': 'postgres',
+        'HOST': 'db',
         'PASSWORD': 'password',
         'PORT': '5432',
     }

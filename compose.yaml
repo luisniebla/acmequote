@@ -1,20 +1,27 @@
 services:
-  postgres:
+  db:
     image: "postgres:16"
     environment:
       - POSTGRES_PASSWORD=password
       - PGSYSCONFDIR=/etc/
+      - POSTGRES_DB=acme
+      - PGUSER=postgres
     volumes:
       - ./api/acme/.pg_service.conf:/etc/pg_service.conf
       - ./api/acme/.pg_service.conf:/etc/postgresql-common/.pg_service.conf
     ports:
       - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready", "-U", "postgres", "-d", "acme"]
+      interval: 1s
+      timeout: 5s
+      retries: 10
   api:
     build: api
     ports:
       - "8000:8000"
     depends_on:
-      - postgres
+      - db
     restart: always
     volumes:
       - ./api:/code
