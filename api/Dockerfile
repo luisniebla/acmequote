@@ -1,10 +1,10 @@
 FROM python:3.12-bookworm
 EXPOSE 8000
-WORKDIR /api
-COPY requirements.txt /api
+WORKDIR /code
+COPY requirements.txt /code
 RUN pip3 install -r requirements.txt
-COPY . /api
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+COPY . /code
+CMD ["python", "/code/manage.py", "runserver", "0.0.0.0:8000"]
 
 # FROM builder as dev-envs
 # RUN <<EOF

@@ -3,9 +3,18 @@ services:
     image: "postgres:16"
     environment:
       - POSTGRES_PASSWORD=password
+      - PGSYSCONFDIR=/etc/
+    volumes:
+      - ./api/acme/.pg_service.conf:/etc/pg_service.conf
+      - ./api/acme/.pg_service.conf:/etc/postgresql-common/.pg_service.conf
+    ports:
+      - "5432:5432"
   api:
     build: api
     ports:
       - "8000:8000"
     depends_on:
       - postgres
+    restart: always
+    volumes:
+      - ./api:/code
